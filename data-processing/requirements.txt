@@ -1,0 +1,4 @@
+Pillow==9.0.1
+PyPDF2==3.0.1
+pandas==1.4.2
+pdfplumber==latest_version
