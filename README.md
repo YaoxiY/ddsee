@@ -1,11 +1,30 @@
-# Data-Driven Software Engineer Evaluation
-
-## Workflow for Submission
-
-1. **Fork this Repository**: please fork this repository to your own GitHub account to work independently
-2. **Complete the Tasks**: clone your fork locally, complete the tasks, and commit your changes to your fork
-3. When your work is complete, send the link to your repository to the following e-mail address: *softwarearchitect@minervadigitalintelligence.com*
-
-## Deadline 
-
-You have 48 hours from the time of receiving this link to submit your completed repository link via email.
+# Data extraction from pdf
+## solution
+1. classify pdf
+2. identify the valuable data
+## pdf type
+### brochure
+company_name	str  
+company_address	str  
+company_contact	str  
+date	str  
+product_name	str  
+product_overview	str  
+product_detail	str  
+### letter
+letter_from	str  
+address	str  
+phone_number	str  
+email_address	str  
+date	str  
+letter_to	str  
+content	str  
+### resume
+name	str  
+address	str  
+phone_number	str  
+email_address	str  
+skills	str  
+experience	str  
+education	str  
+awards	str  
