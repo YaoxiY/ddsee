@@ -53,13 +53,14 @@ def extract_brochure_info(text):
         product_detail = product_detail_match.group(0).strip()
 
     # Extract date (month-year)
-    date_match = re.search(r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+20\d{2}\b', text)
+    date_pattern = r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:\s+|\s+)?\d{1,}\b'
+    date_match = re.search(date_pattern, text, re.IGNORECASE)
     date = date_match.group(0) if date_match else None
 
     return {
-        "company_name": company_name,
         "company_address": company_address,
         "company_contact": company_contact,
+        "company_name": company_name,
         "date": date,
         "product_name": product_name,
         "product_overview": product_overview,
@@ -83,7 +84,8 @@ def extract_letter_info(text):
     content = content_match.group(0).strip() if content_match else None
 
     # Extract the date
-    date_match = re.search(r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+20\d{2}\b', text)
+    date_pattern = r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(?:\s+|\s+)?\d{1,}\b'
+    date_match = re.search(date_pattern, text, re.IGNORECASE)
     date = date_match.group(0) if date_match else None
 
     return {
@@ -147,7 +149,7 @@ def extract_brochure_info(text):
 
     # Extract date: Text that contains month and year (e.g., Jan 2024)
     date = None
-    match_date = re.search(r"\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\w*\s+\d{4}\b", text)
+    match_date = re.search(r"\b(January|February|March|April|May|June|July|August|September|October|November|December)\w*\s+\d{4}\b", text)
     if match_date:
         date = match_date.group(0).strip()
 
